@@ -19,9 +19,9 @@ Calculator.prototype.multiply = function(number){
 }
 
 Calculator.prototype.divide = function(number){
-  if (parseFloat(number) === 0 ) {
-    return "not allowed"
-  } else {
+  // if (parseFloat(number) === 0 ) {
+  //   return "not allowed"
+  // } else {
   this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
 }
 }
