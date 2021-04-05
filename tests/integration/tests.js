@@ -43,28 +43,28 @@ it('should update display with running total of number number', function(){
     
   })
 // 4. Is the output as expected for a range of numbers (for example, positive, negative, decimals and very large numbers)?
-it('should be the same output for  arange of numbers', function(){
+it('should be the same output for a range of numbers', function(){
   running_total = element(by.css('#running_total'))
   element(by.css('#number2')).click();
   element(by.css('#operator_divide')).click();
   element(by.css('#number8')).click();
   element(by.css('#operator_subtract')).click();
   element(by.css('#number1')).click();
-  element(by.css('#number0')).click();
-  element(by.css('#number0')).click();
+  element(by.css('#number1')).click();
+  element(by.css('#number1')).click();
   element(by.css('#operator_equals')).click();
-  expect(running_total.getAttribute('value')).to.eventually.equal('-99.75')
+  expect(running_total.getAttribute('value')).to.eventually.equal('-110.75')
 })
 // 5. What does the code do in exceptional circumstances? Specifically, 
 // if you divide by zero, what is the effect? Write a test to describe what you'd prefer 
 // to happen, and then correct the code to make that test pass (you will need to modify the Calculator model to meet this requirement).
-it('should be the same output for  arange of numbers', function(){
+it('should equal not allowed if divided by 0', function(){
   running_total = element(by.css('#running_total'))
-  element(by.css('#number2')).click();
+  element(by.css('#number1')).click();
   element(by.css('#operator_divide')).click();
   element(by.css('#number0')).click();
   element(by.css('#operator_equals')).click();
-  expect(running_total.getAttribute('value')).to.eventually.equal('Not a number')
+  expect(running_total.getAttribute('value')).to.eventually.equal('0')
   })
 
 });

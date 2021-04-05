@@ -1,3 +1,4 @@
+
 const Calculator = function(){
   this.previousOperator = null; // the last operator the user clicked
   this.previousTotal = 0;       // the total of the previous operation
@@ -18,7 +19,11 @@ Calculator.prototype.multiply = function(number){
 }
 
 Calculator.prototype.divide = function(number){
+  if (parseFloat(number) === 0 ) {
+    return "not allowed"
+  } else {
   this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+}
 }
 
 Calculator.prototype.numberClick = function(number){
@@ -35,6 +40,7 @@ Calculator.prototype.numberClick = function(number){
   this.runningTotal = parseFloat('' + this.runningTotal + number);
 
 }
+
 
 Calculator.prototype.operatorClick = function(operator){
 
@@ -53,6 +59,7 @@ Calculator.prototype.operatorClick = function(operator){
       break;
       case ('/'):
       this.divide(this.runningTotal);
+    
       break;
     }
   }
@@ -64,6 +71,20 @@ Calculator.prototype.operatorClick = function(operator){
   } else {
     this.previousOperator = operator;
   }
+
+  //if number is divided by zero make output NaN
+
+
+
+  // if the a number is divided by zero display "not a number " button was clicked, clear the previous operator, otherwise
+  // record what the previous operator was
+  // if (number) {
+  //   number= +number;  // Coerce to number.
+  //   if (!number) {  // Matches +0, -0, NaN
+  //     throw new Error('Invalid dividend ');
+  //   }
+  //   return number;
+  // }
   // replace the previous total with the current running total and flag that a
   // new total has been calculated
 

@@ -33,4 +33,11 @@ document.addEventListener('DOMContentLoaded', function(){
     updateView();
   };
 
+//   const operation = document.querySelector('input[name="operation"]:checked').value;
+    
+//   if ( operator.divide && number === 0 ) {
+//     return alert("Not a Number"); 
+//     updateView();
+// }
+
 })
