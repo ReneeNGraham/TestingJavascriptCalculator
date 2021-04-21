@@ -39,27 +39,27 @@ it("can divide 21 by 7 and get 3", function() {
 })
 // calculator.numberClick() - concatenate multiple number button clicks
 it("concatenate multiple number button clicks", function() {
-  calculator.numberClick(1)
-  calculator.numberClick(2)
+  calculator.numberClick(1);
+  calculator.numberClick(2);
   assert.strictEqual(12, calculator.runningTotal);
 })
 // calculator.operatorClick() - chain multiple operations together
 it("chain multiple operations together", function() {
-  calculator.numberClick(1)
-  calculator.operatorClick("+")
-  calculator.numberClick(2)
-  calculator.operatorClick("-")
-  calculator.numberClick(1)
+  calculator.numberClick(1);
+  calculator.operatorClick("+");
+  calculator.numberClick(2);
+  calculator.operatorClick("-");
+  calculator.numberClick(1);
   assert.strictEqual(1, calculator.runningTotal);
 })
 // calculator.clearClick() - clear the running total without affecting the calculation
 it("chain multiple operations together", function() {
-  calculator.numberClick(1)
-  calculator.operatorClick("+")
-  calculator.numberClick(2)
-  calculator.operatorClick("-")
-  calculator.numberClick(1)
-  calculator.clearClick() 
+  calculator.numberClick(1);
+  calculator.operatorClick("+");
+  calculator.numberClick(2);
+  calculator.operatorClick("-");
+  calculator.numberClick(1);
+  calculator.clearClick();
   assert.strictEqual(0, calculator.runningTotal);
 })
 
